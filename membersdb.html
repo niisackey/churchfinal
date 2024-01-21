@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Members</title>
+    <link rel="shortcut icon" href="assets/images/BCI LOGO white-01.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/members.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+   
+    <div class="area" data-aos="flip-left">
+        <div class="text">
+            <h2>Please fill out this form.</h2>
+            <h5>For Church Members only.</h5>
+        </div>
+        <form action="" method="post" id="myForm">
+            <div class="input-group">
+                <div class="form-inner">
+                    <div class="side">
+                        <!-- <label for="fs">First Name</label><br> -->
+                        <input type="text" name="Other Names" autocomplete="off" class="input" placeholder="Other Names"
+                            required>
+
+                        <!-- <br><label for="ls">Last Name</label> -->
+                        <br><input type="text" name="Surname" autocomplete="off" class="input" placeholder="Surname"
+                            required>
+                    </div>
+                    <div class="side">
+                        <label for="DOB">Date of Birth</label>
+                        <input type="date" autocomplete="off" class="input" name="DOB" placeholder="Dirth of Birth"
+                            required>
+                        <select name="Gender" id="" required>
+                            <option value="None">Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+
+                    <div class="side">
+                        <br><input type="tel" name="Tel" autocomplete="off" class="input" placeholder="Phone Number"
+                            required>
+                        <br><input type="text" name="Address" autocomplete="off" class="input" placeholder="Address"
+                            required>
+                    </div>
+
+                    <div class="sel">
+                        <label for="Wing">Please Select Wing You are in</label><br>
+                        <div class="side1">
+
+                            <select id="Wing" name="Wing" required>
+                                <option value="Wing">Select a wing</option>
+                                <option value="None">None</option>
+                                <option value="Media Crew">Media Crew</option>
+                                <option value="Ushers">Ushers and Organizers</option>
+                                <option value="Citadel Voices">Instrumentalist</option>
+                                <option value="Citadel Voices">Womens Ministry</option>
+                                <option value="Citadel Voices">Citadel Voices</option>
+                                <option value="Citadel Voices">Mens Ministry</option>
+                            </select>
+                            <input type="email" name="Email" autocomplete="off" class="input" placeholder="Email">
+                        </div>
+
+                        <br>
+                        <p>
+                            1. Read <button class="openPopup" data-target="popup1"> Terms and Condition</button> here
+                        </p>
+                        <input type="checkbox" id="myCheckbox"><label for="checkbox"> I have <br>
+                            1. Read and Accept the terms and Conditions <br>
+                            2. I am a Member of Believers Citadel International Church.
+                        </label>
+
+                    </div>
+
+
+                </div>
+            </div><br><br>
+            <div class="bts">
+                <button type="submit" class="submit">submit</button><br>
+                <button type="reset" class="reset">Reset</button>
+                <!-- <input type="submit" value="submit" class="submit" id="submitButton"><br>
+                <input type="reset" value="reset" class="reset"> -->
+            </div>
+
+            <div class="page">
+                <a href="index.html">BACK TO HOMEPAGE</a>
+            </div>
+        </form>
+    </div>
+    <div id="popup1" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h2>Terms and Conditions</h2>
+            <p>By agreeing to these Terms and Conditions, church members consent to the collection, storage, and
+                processing of their personal information for the purpose of maintaining a church database. The collected
+                information may include names, contact details, family information, and involvement in church
+                activities. The church is committed to ensuring data security and will not share personal information
+                with third parties without consent. Members have the right to access and correct their information, and
+                they can withdraw their consent at any time. The church will retain the information as long as necessary
+                and may update these Terms periodically</p>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function () {
+            const form = document.getElementById('myForm');
+            form.addEventListener('submit', function (event) {
+                const checkbox = document.getElementById('myCheckbox');
+                if (checkbox.checked) {
+                    alert('Checkbox is checked!');
+                } else {
+                    event.preventDefault();
+                    alert('Please check the box before submitting.');
+                }
+            });
+        }
+    </script>
+    <script src="assets/js/button.js"></script>
+
+    <script>
+
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwYQYmvU5OqBvYEi_0Wyhwy53UuiotKcDUsZZL9rZ7daHpxuwVofUdWvfrlHlHI7fSuvw/exec'
+        const form = document.querySelector("#myForm")
+
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    console.log('Success!', response);
+                    // Clear the form
+                    form.reset();
+                    // Display a success message using an alert
+                    alert('Thank you for your submission!');
+                })
+                .catch(error => {
+                    console.error('Error!', error.message);
+                    // Display an error message using an alert
+                    alert('Submission failed. Please try again.');
+                });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            AOS.init();
+        });
+    </script>
+</body>
+
+</html>

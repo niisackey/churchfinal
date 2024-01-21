@@ -1,0 +1,123 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  
+    list-style: none;
+  }
+  html,body{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  body {
+    line-height: 1.5;
+    font-family: 'roboto', sans-serif;
+   
+  } 
+
+   hr{
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h1{
+    text-align: center;
+  }
+
+   .event-container{
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: "roboto" sans-serif;
+    padding: 1em;
+  }
+
+  .event-container h3.year {
+    font-size: 40px;
+    text-align: center;
+    border-bottom: 1px solid #b1b1b1;
+  }
+
+  .event-container .event{
+    box-shadow: 0px 4px 16px -8px rgba(0,0,0,0.4
+    );
+    display: flex;
+    border-radius: 10px;
+    margin: 32px 0;
+  }
+
+  .event .event-left{
+    background: rebeccapurple;
+    min-width: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    padding: 8px 48px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 8px 0 0 8px;
+  }
+
+  .event .event-left .date{
+    font-size: 56px;
+  }
+
+  .event .event-left .month{
+    font-size: 16px;
+    font-weight: normal;
+
+  }
+ .event .event-right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 24px;
+
+ }
+  
+ .event .event-right h3.event-title{
+    font-size: 24px;
+    margin: 24px 0 10px 0;
+    color: blue;
+    text-transform: uppercase;
+ }
+ 
+ .event .event-right .event-timing{
+    background: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    padding: 8px;
+    border-radius: 16px;
+    margin: 24px 0;
+    font-size: 14px;
+ }
+
+ @media(max-width:550px){
+    .event {
+        flex-direction: column;
+    }
+
+    .event-container{
+      margin: 20px;
+    }
+
+    .event .event-left{
+        padding: 0;
+        border-radius: 8px 8px 0 0;
+    }
+
+    .event .event-left .event-date .date ,
+    .event .event-left .event-date .month {
+        display: inline-block;
+        font-size: 24px;
+
+    }
+
+    .event .event-left .event-date{
+        padding: 10px 0;
+    }
+ } 
