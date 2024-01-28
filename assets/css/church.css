@@ -368,8 +368,8 @@ button {
 
 button:hover {
   background: transparent;
-  border: 2px solid rebeccapurple;
-  color: black;
+  border: 2px solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
 }
 
 button>a {
@@ -2495,7 +2495,7 @@ input[type=radio]:checked {
     padding: 1em;
   }
 .floatbar .it a img{
-  width: 50px !important;
+  width: 30px !important;
 }
 
 /* 

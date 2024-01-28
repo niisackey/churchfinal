@@ -4,7 +4,7 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
   
-    /* list-style: none; */
+    
   }
   html,body{
     scroll-behavior: smooth;
@@ -1220,7 +1220,9 @@ box-shadow: 0 0 10px #333;
 
 
 @media screen and (max-width:768px){
- 
+  .lowertag ul{
+    list-style-type: disc;
+  }
   .slideContent q {
     font-size: 29px;
   }
