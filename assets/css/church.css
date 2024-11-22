@@ -334,12 +334,22 @@ box-shadow: 0 0 10px #333;
  
 }
 
+.santa{
+  position: absolute;
+  top: -70px; /* Adjust to place on top */
+  left: 250px; /* Adjust for horizontal positioning */
+  width: 100px; /* Adjust size as needed */
+ 
+}
+
 .content {
   width: 100%;
   margin: 200px auto 0;
   text-align: center;
   background: transparent;
   color: white;
+  position: relative;
+  display: inline-block;
   
  
   
@@ -366,10 +376,12 @@ button {
  
 }
 
+
+
 button:hover {
   background: transparent;
-  border: 2px solid rgb(255, 255, 255);
-  color: rgb(255, 255, 255);
+  border: 2px solid rgb(145, 132, 132);
+  color: rgb(145, 132, 132);
 }
 
 button>a {
@@ -1090,9 +1102,7 @@ width: 45%;
   padding: 1em;
  
 }
-.addtext p{
- 
-}
+
 
 .textadl{
   margin: 30px;
@@ -1809,9 +1819,52 @@ position: relative;
   transition: 0.5s;
 }
 
-.act img:hover{
-
+/* Container for the festive animations */
+.festive-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1000;
 }
+
+/* Styling each xmas (snowflake, tree, gift, etc.) */
+.xmas {
+  position: absolute;
+  top: -10px;
+  font-size: 1.5rem;
+  opacity: 0.8;
+  animation: fall 10s linear infinite;
+  color: #A0C4FF;
+}
+
+/* Keyframe animation to simulate floating down the screen */
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Unique positioning and animation timing for each xmas */
+.xmas:nth-child(1) { left: 5%; animation-duration: 12s; font-size: 2rem; color: #FF6B6B; }
+.xmas:nth-child(2) { left: 15%; animation-duration: 14s; font-size: 1.5rem; color: #FFE66D; }
+.xmas:nth-child(3) { left: 25%; animation-duration: 10s; font-size: 2rem; color: #4ECDC4; }
+.xmas:nth-child(4) { left: 35%; animation-duration: 16s; font-size: 2.5rem; color: #FF9F1C; }
+.xmas:nth-child(5) { left: 45%; animation-duration: 12s; font-size: 1.5rem; color: #A0C4FF; }
+.xmas:nth-child(6) { left: 55%; animation-duration: 14s; font-size: 2.2rem; color: #FF6B6B; }
+.xmas:nth-child(7) { left: 65%; animation-duration: 10s; font-size: 1.8rem; color: #FFE66D; }
+.xmas:nth-child(8) { left: 75%; animation-duration: 18s; font-size: 1.5rem; color: #4ECDC4; }
+.xmas:nth-child(9) { left: 85%; animation-duration: 16s; font-size: 2rem; color: #FF9F1C; }
+.xmas:nth-child(10) { left: 95%; animation-duration: 14s; font-size: 1.5rem; color: #A0C4FF; }
+
 
 
 
@@ -2174,6 +2227,10 @@ position: relative;
     display: flex; */
   }
 
+  .santa{
+    left: -13px;
+    width: 100px;
+  }
 
   .content {
     width: 100%;
@@ -2331,9 +2388,7 @@ position: relative;
   display: none !important;
   }
 
-  .music img{
-  
-  }
+
 
   .music:before{
     display: none;
@@ -2520,6 +2575,83 @@ input[type=radio]:checked {
   }
 }
 
+.floatbar .bar .it a {
+  font-size: 2.2rem; /* Adjust size as needed */
+  text-decoration: none;
+}
+
+/* Floatbar */
+
+/* Overall styling */
+.merry-christmas {
+  font-family: "Mountains of Christmas", serif !important;
+  font-size: 2.0rem;
+  color: #2F7336;
+  color: linear-gradient(
+    to right,
+    #2F7336,#AA3A38
+  );
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  position: relative;
+  padding: 0.5px;
+}
+
+#typewriter {
+  display: inline-block;
+  border-right: 2px solid #ff0000; /* Blinking cursor */
+  animation: blink 0.6s step-end infinite;
+  font-family: "Mountains of Christmas", serif !important;
+}
+
+span{
+  font-family: "Mountains of Christmas", serif !important;
+}
+
+/* Animations for letters */
+.fade-in {
+  animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+.slide-in {
+  animation: slideIn 0.8s ease-in-out forwards;
+}
+
+/* Cursor blink effect */
+@keyframes blink {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #ff0000;
+  }
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide-in animation */
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+
 
 .floatbar{
   display: flex;
@@ -2528,6 +2660,7 @@ input[type=radio]:checked {
   position: relative;
   width: 100%;
   margin-top: -150px;
+ 
 
 }
 
@@ -2539,7 +2672,9 @@ input[type=radio]:checked {
   width: 45%;
   align-items: center;
   justify-content: center;
-  background-color: whitesmoke;
+  background: linear-gradient(135deg, #FFEFBA, #ACECA1);
+
+
   /* position: relative; */
   position: relative;
   box-shadow: 0 5px 15px rgba(0,0,0,.5);
@@ -2865,7 +3000,7 @@ section#timeline article div.inner h2:after {
   right: -5px;
     width: 10px; 
     height: 10px;
-  -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
 }
 section#timeline article div.inner p {
   /* padding: 15px; */
